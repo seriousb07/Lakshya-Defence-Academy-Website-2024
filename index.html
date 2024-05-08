@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style5.css">
+
+    
+
+</head>
+<body>
+    <header>
+        <img src="logo2.jpeg" alt="Logo" class="logo">
+        <h1 class="academy-name"><b>LAKSHYA DEFENCE ACADEMY</b></h1>
+        
+        <div class="navigation">
+            <div class="navigation-items">
+              <nav>
+                <a href="abc22.html"><b>Home</b></a>
+                <a href="gallery.html"><b>Gallery</b></a>
+                <a href="about.html"><b>About</b></a>
+                <a href="contact.html"><b>Contact</b></a>
+                <a href="achievement.html"><b>achievement</b></a>
+                <a href="registration.html"><b>Register</b></a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <script src="index.js"></script>
+
+
+    <section class="home">
+        
+        <div class="content">
+            <h2>Police & Army<br><span>Carrier Academy</span></h2>
+            <p><b>“Either I will come back after hoisting the Tricolor, or I will come back wrapped in it. But I’ll be back for sure.” – Captain Vikram Batra (Param Vir Chakra)</b></p>
+            <a href="#">Read More</a>
+    
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/lakshya_defence_academy__?igsh=MXJvZmd0Zzh4aW9heA=="><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@lakshyadefenceacademyjalga1171?si=8FfnL0GAOZXolyBf"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active">.</div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+      
+
+    </section>
+
+<main>
+<div class="container">
+<div>
+<i class="fa fa-history"></i>
+<div class="counter" data-target="91">24</div>
+<h3>Working Hours</h3>
+</div>
+
+<div>
+<i class="fa fa-users text-primary"></i>
+<div class="counter" data-target="15000">0</div>
+<h3>Happy Students</h3>
+</div>
+
+<div>
+<i class="fas fa-user-graduate"></i>
+<div class="counter" data-target="30">30</div>
+<h3>Year Experience</h3>  
+</div>
+
+<div>
+<i class="fa fa-award text-primary"></i>
+<div class="counter" data-target="5000">0</div>
+<h3>Win Awards</h3>
+</div>
+</div>
+</main>
+
+<script>
+const counters = document.querySelectorAll(".counter");
+const speed = 200;
+
+counters.forEach(counter => {
+const target = +counter.getAttribute("data-target");
+
+const interval = setInterval(() => {
+const count = +counter.innerText;
+const inc = Number.parseInt(target / speed);
+
+if (count < target) return (counter.innerText = count + inc);
+counter.innerText = target;
+
+clearInterval(interval);
+}, 10);
+});
+</script>
+    <section class="notice-board">
+      <div class="notice">
+        <h3><b><u>Notice Board</u></b></h3>
+          <marquee direction="up" behavior="scroll" scrollamount="6" width="100%" height="500px">
+              <div>
+                  
+                  <ul>
+                      <li><b>Our Toppers in 2023</b></li>
+                      <img src="p27.jpg"  class="board-image" onclick="openModal('p27.jpg')">
+                      <br>
+                      <li><b>Our Toppers in 2022</b></li>
+                      <img src="p28.jpg"  class="board-image" onclick="openModal('p28.jpg')">
+                      <br>
+                      <li><b>About Lakshya Defence Academy</b></li>
+                      <img src="p30.jpg" class="board-image" onclick="openModal('p30.jpg')">
+                    
+                  </ul>
+                
+              </div>
+              
+  
+          </marquee>
+      </div>
+    
+  </section>
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+  // Function to open the modal
+function openModal(imageSrc) {
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("modalImg");
+modal.style.display = "block"; // Show the modal
+modalImg.src = imageSrc; // Set the src attribute of the modal image
+}
+
+// Function to close the modal
+function closeModal() {
+var modal = document.getElementById("myModal");
+modal.style.display = "none"; // Hide the modal
+}
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+});
+</script>
+
+  
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style8.css">
+<!-- Fontawesome icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+<body>
+<header>
+  <img src="logo2.jpeg" alt="Logo" class="logo">
+<h1 class="academy-name"><b>LAKSHYA DEFENCE ACADEMY</b></h1>
+<div class="menu-btn"></div>
+<div class="navigation">
+    <div class="navigation-items">
+        <a href="abc22.html"><b>Home</b></a>
+        <a href="gallery.html"><b>Gallery</b></a>
+        <a href="about.html"><b>About</b></a>
+        <a href="contact.html"><b>Contact</b></a>
+        <a href="achievement.html"><b>achievement</b></a>
+        <a href="registration.html"><b>Register</b></a>
+
+    </div>
+</div>
+
+<div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+  <ul class="mobile-menu">
+    <li><a href="abc22.html"><b>Home</b></a></li>
+    <li><a href="gallery.html"><b>Gallery</b></a></li>
+    <li><a href="about.html"><b>About</b></a></li>
+    <li><a href="contact.html"><b>Contact</b></a></li>
+    <li> <a href="achievement.html"><b>achievement</b></a></li>
+    <li><a href="registration.html"><b>Register</b></a></li>
+
+  </ul>
+</div>
+
+
+</header>
+
+
+<section class = "contact-section">
+  <div class = "contact-bg">
+    <h3>Get in Touch with Us</h3>
+    <h2>contact us</h2>
+    <div class = "line">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p class = "text"><b>ARMY, NAVY, AIR FORCE महाराष्ट्र पोलिस, NIA, NCB, SSF, CRPF, CISF, ITBP, SSB, ASSAM RIFLE, BSF, MPSC, MTS, CHSL, तलाठी, ग्रामसेवक सरळसेवा भरती</b></p>
+  </div>
+
+
+  <div class = "contact-body">
+    <div class = "contact-info"> 
+      <div>
+        <span><i class = "fas fa-mobile-alt"></i></span>
+        <span>Phone No.</span>
+        <span class = "text">+91 9413604073</span>
+      </div>
+      <div>
+        <span><i class = "fas fa-envelope-open"></i></span>
+        <span>E-mail</span>
+        <span class = "text">anandgund2@gmail.com</span>
+      </div>
+      <div>
+        <span><i class = "fas fa-map-marker-alt"></i></span>
+        <span>Address</span>
+        <span class = "text">जळगांव नेऊर, ता. येवला, जि. नाशिक</span>
+      </div>
+      <div>
+        <span><i class = "fas fa-clock"></i></span>
+        <span>Opening Hours</span>
+        <span class = "text">Monday - Friday (9:00 AM to 5:00 PM)</span>
+      </div>
+    </div>
+
+    <div class = "contact-form">
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <div>
+          <input type = "text" class = "form-control" name="firstName" placeholder="First Name" name="First Name">
+          <input type = "text" class = "form-control" name="lastName" placeholder="Last Name" name="Last Name">
+        </div>
+        <div>
+          <input type = "email" class = "form-control"  name="email" placeholder="E-mail" name="E-mail">
+          <input type = "tel" class = "form-control" name="phone" placeholder="Phone" name="Phone">
+        </div>
+        <textarea rows = "5"  name="message" placeholder="Message" class = "form-control" name="Message"></textarea>
+        <input type = "submit" class = "send-btn" value = "send message">
+      </form>
+
+      <div>
+        <img src = "p3.jpg" alt = "">
+      </div>
+    </div>
+  </div>
+
+  <div class = "map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.8560493127516!2d74.36023537500382!3d20.05647138136062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdc37fb7ff090b1%3A0xd4dc365ca79b8e0d!2sLAKSHYA%20DEFENCE%20ACADEMY!5e0!3m2!1sen!2sin!4v1711652376383!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div>
+
+  <div class = "contact-footer">
+    <h3>Follow Us</h3>
+    <div class = "social-links">
+      <a href = "#" class = "fab fa-facebook-f"></a>
+      <a href = "#" class = "fab fa-twitter"></a>
+      <a href = "https://www.instagram.com/lakshya_defence_academy__?igsh=MXJvZmd0Zzh4aW9heA==" class = "fab fa-instagram"></a>
+      <a href = "#" class = "fab fa-linkedin"></a>
+      <a href = "https://youtube.com/@lakshyadefenceacademyjalga1171?si=8FfnL0GAOZXolyBf" class = "fab fa-youtube"></a>
+    </div>
+  </div>
+</section>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendEmail(){
+        Email.send({
+        Host : "smtp.gmail.com",
+        Username : "pratikbulkunde4@gmail.com",
+        Password : "9657998980",
+        To : 'pratikbulkunde344@gmail.com',
+        From : document.getElementById("email").value,
+        Subject : "New contact form",
+        Body : "Name: "+ document.getElementById("name").value
+                +"<br> Email: " + document.getElementById
+        }).then( 
+        message => alert(message)
+      );
+    }
+</script>
+
+
+    
+</body>
+</html>
+
+
