@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding-top: 60px;
+      height: 100%;
+    }
+    header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+    background-color: #0065d1;
+
+}
+header .academy-name{
+    font-family: Arial, Helvetica, sans-serif; 
+    background: linear-gradient(to right, orange, white, rgb(167, 255, 167)); 
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+    margin-top: 15px;
+
+}
+header .logo{
+    z-index: 0;
+    position: fixed;
+    left: 1%;
+    top: 1%;
+    width: 5%;
+    border-radius: 49%;
+
+
+}
+
+img:hover {
+    opacity: 0.5;
+  }
+
+header .navigation{
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+    
+
+}
+header .navigation .navigation-items a:before{
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+   
+}
+
+header .navigation .navigation-items a:hover:before{
+   width: 100%;
+}
+header .navigation .navigation-items a:hover{
+    color: orange;
+}
+
+    .slider-container {
+      position: relative;
+      height: calc(100% - 60px); /* Adjusted height */
+      overflow: hidden;
+      padding: 10px;
+      background: linear-gradient(#fff, #007bff);
+      margin-top: 10px; /* Adjusted margin-top */
+      margin-bottom: 200px;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: transparent;
+      height: 100px; /* Adjust the height of the navbar */
+      display: flex;
+      align-items: center; /* Align items vertically */
+      padding: 20px;
+      color: black;
+    }
+    
+    .navbar img {
+      height: 80px; /* Increase the size of the logo */
+      width: 80px; /* Increase the size of the logo */
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    
+    .academy-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-right: 20px; /* Adjust the distance between logo and academy name */
+    }
+    
+    .navbar nav {
+      margin-left: auto; /* Push the navigation links to the right */
+    }
+    
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+    
+    .navbar ul li {
+      margin-right: 20px;
+    }
+    
+    .navbar ul li:last-child {
+      margin-right: 0;
+    }
+    
+    .navbar a {
+      color: black;
+      text-decoration: none;
+      font-size: 20px;
+      margin-top: 20px; /* Adjusted margin-top */
+    }
+    
+    .navbar a:hover {
+      color: #007bff;
+    }
+    
+
+    .join-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: background-color 0.3s;
+    }
+
+    .join-button:hover {
+      background-color: #45a049;
+    }
+
+    .register-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+      bottom: 20px; /* Adjusted bottom */
+    }
+
+    .register-button:hover {
+      background-color: #0056b3;
+    }
+
+    .slider-container {
+      position: relative;
+      height: calc(100% - 100px);
+      overflow: hidden;
+      padding: 10px;
+      background: linear-gradient(#fff, #007bff);
+      margin-top: 20px;
+      margin-bottom: 200px;
+    }
+
+    .slider {
+      display: flex;
+      height: calc(100% - 20px);
+      margin-top: 10px; /* Adjusted margin-top */
+      margin-left: 100px;
+      margin-right: 100px;
+    }
+
+    .slide {
+      width: calc(100% - 20px);
+      height: 100%;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+    ul a {
+  color: white;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+  margin-left: 80PX;
+}
+
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(4 5deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 1px;
+  left: 200px;
+  height: calc(100vh - 50px);
+  width: 100%;
+  background-color: #000000;
+  width: 35%;
+ 
+  margin: 1px;
+  align-items: center;
+  border-radius: 10px;
+  height: auto;
+  margin-left: 30PX;
+ 
+
+ 
+ 
+}
+.mobile-menu a:hover{
+  color: orange;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  header nav {
+    display:none;
+  }
+
+
+  #hamburger-icon {
+    display: block;
+  }
+  body{
+    padding-top: 60px;
+  }
+  
+  header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+    background-color: #0065d1
+  
+  }
+
+ 
+  section{
+      padding: 100px 20px;
+  }
+  .home .media-icons{
+      right: 15px;
+  }
+
+
+  header .navigation {
+    display: none; /* Change display to block or flex as needed */
+  }
+
+ /* header  .mobile-menu{
+    background: #0000;
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgb(1 1 1/20%);
+   }*/
+
+  header .navigation .navigation-items a {
+    margin-left: 0; /* Reset margin for stacked items */
+  }
+
+
+  
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo2.jpeg" alt="Logo" class="logo">
+  <h1 class="academy-name"><b>LAKSHYA DEFENCE ACADEMY</b></h1>
+  <div class="menu-btn"></div>
+  <div class="navigation">
+      <div class="navigation-items">
+          <a href="abc22.html"><b>Home</b></a>
+          <a href="index.html"><b>Gallery</b></a>
+          <a href="about.html"><b>About</b></a>
+          <a href="contact.html"><b>Contact</b></a>
+          <a href="achievement.html"><b>achievement</b></a>
+          <a href="registration.html"><b>Register</b></a>
+  
+      </div>
+  </div>
+  
+  <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+    <ul class="mobile-menu">
+      <li><a href="abc22.html"><b>Home</b></a></li>
+      <li><a href="index.html"><b>Gallery</b></a></li>
+      <li><a href="about.html"><b>About</b></a></li>
+      <li><a href="contact.html"><b>Contact</b></a></li>
+      <li> <a href="achievement.html"><b>achievement</b></a></li>
+      <li><a href="registration.html"><b>Register</b></a></li>
+  
+    </ul>
+  </div>
+  
+  
+  </header>
+  <script src="index.js"></script>
+  <div class="navbar">
+    <img src="logo2.jpeg" alt="Logo">
+    <h1 class="academy-name">LAKSHYA DEFENCE ACADEMY</h1>
+  </div>
+
+  <div class="slider-container">
+    <div class="slider">
+      <img class="slide" src="photo1.jpeg" alt="Image 1">
+      <img class="slide" src="photo2.jpeg" alt="Image 2">
+      <img class="slide" src="photo3.jpeg" alt="Image 3">
+      <img class="slide" src="photo4.jpeg" alt="Image 4">
+      <img class="slide" src="photo5.jpeg"alt="Image 5">
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </div>
+  <button class="join-button" onclick="openJoinPage()">Join</button>
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlide(index) {
+      for (let i = 0; i < slides.length; i++) {
+        if (i === index) {
+          slides[i].style.display = "block";
+        } else {
+          slides[i].style.display = "none";
+        }
+      }
+    }
+
+    function prevSlide() {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    setInterval(() => {
+      nextSlide();
+    }, 4000);
+
+    function openJoinPage() {
+        window.open('join.html', '_blank');
+      }
+</script>
+</body>
+</html>
+  
